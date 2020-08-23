@@ -27,7 +27,9 @@ class Home extends StatefulWidget{
 class HomeState extends State<Home> {
   int count = 0;
   String _answer = "";
-  var _answers = [
+  //use final when it never changes once widget is created. Also the data can be set at runtime
+  //use constant when the data is to be set before run time
+  static const _answers = [
     {"text": "A. www.", "answer": "A"},
     {"text": "B. www.nscdc.com", "answer": "B"},
     {"text": "C. I don't know", "answer": "C"},
