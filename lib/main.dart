@@ -27,6 +27,12 @@ class Home extends StatefulWidget{
 class HomeState extends State<Home> {
   int count = 0;
   String _answer = "";
+  var _answers = [
+    {"text": "A. www.", "answer": "A"},
+    {"text": "B. www.nscdc.com", "answer": "B"},
+    {"text": "C. I don't know", "answer": "C"},
+    {"text": "D. Please help me sir", "answer": "D"},
+  ];
   void increaseCount(){
     setState(() {
       this.count++;
@@ -60,10 +66,10 @@ class HomeState extends State<Home> {
         Text('$count'),
         Question('What is the website of the NSCDC?'),
         Text('Answer: ' + this._answer),
-        //notice the anonymous function here
-        Answer("www.nscdc that's all",(){selectAnswer("www.nscdc that's all");} ),
-        Answer("www.nscdc.com", (){selectAnswer("www.nscdc.com");} ),
-        Answer("I don't know", (){selectAnswer("I don't know");} ),
+        ...this._answers.map((answer){
+          //notice the anonymous function here
+          return Answer(answer["text"],(){selectAnswer(answer["answer"]);} );
+        }),
         ],
       ),
     ),
