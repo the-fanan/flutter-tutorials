@@ -29,16 +29,12 @@ class HomeState extends State<Home> {
     setState(() {
       this.count++;
     });
-    
-    print(this.count);
   }
 
   void decreaseCount(){
     setState(() {
       this.count--;
     });
-    
-    print(this.count);
   }
 
   @override
