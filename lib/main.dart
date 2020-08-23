@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+
+import './question.dart';
+
 void main(){
   //types: int, double, num string
   runApp(MyFirstApp());
@@ -19,7 +22,7 @@ class Home extends StatefulWidget{
     return HomeState();
   }
 }
-
+// underscore for private properties and classes
 class HomeState extends State<Home> {
   int count = 0;
   void increaseCount(){
@@ -51,6 +54,7 @@ class HomeState extends State<Home> {
           RaisedButton(child: Text("Decrease"), onPressed: decreaseCount,), 
         ]),
         Text('$count'),
+        Question('What is the website of the NSCDC?'),
         ],
       ),
     ),
