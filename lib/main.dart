@@ -27,6 +27,10 @@ class Home extends StatefulWidget{
 class HomeState extends State<Home> {
   int count = 0;
   String _answer = "";
+
+  String get _finalAnswer {
+    return "The answer is " + this._answer;
+  }
   //use final when it never changes once widget is created. Also the data can be set at runtime
   //use constant when the data is to be set before run time
   static const _answers = [
@@ -67,7 +71,7 @@ class HomeState extends State<Home> {
         ]),
         Text('$count'),
         Question('What is the website of the NSCDC?'),
-        Text('Answer: ' + this._answer),
+        Text('Answer: ' + this._finalAnswer),
         ...HomeState._answers.map((answer){
           //notice the anonymous function here
           return Answer(answer["text"],(){selectAnswer(answer["answer"]);} );
