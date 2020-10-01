@@ -68,7 +68,7 @@ class HomeState extends State<Home> {
         Text('$count'),
         Question('What is the website of the NSCDC?'),
         Text('Answer: ' + this._answer),
-        ...this._answers.map((answer){
+        ...HomeState._answers.map((answer){
           //notice the anonymous function here
           return Answer(answer["text"],(){selectAnswer(answer["answer"]);} );
         }),
